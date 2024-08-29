@@ -26,6 +26,7 @@ const ScheduleCard = ({
   const onDelete = async () => {
     try {
       await axios.delete(`http://localhost:3001/schedules/${schedule.id}`);
+      await refetch();
     } catch (e) {
       console.log(e);
     }
